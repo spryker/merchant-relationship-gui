@@ -1,4 +1,4 @@
-namespace: SprykerTest\Zed\MerchantRelationship
+namespace: SprykerTest\Zed\MerchantRelationshipGui
 
 paths:
     tests: .

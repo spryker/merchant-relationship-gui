@@ -5,7 +5,7 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace SprykerTest\Zed\MerchantRelationship;
+namespace SprykerTest\Zed\MerchantRelationshipGui;
 
 use Codeception\Actor;
 use Generated\Shared\Transfer\CompanyBusinessUnitTransfer;
