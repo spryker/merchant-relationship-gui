@@ -52,11 +52,6 @@ class MerchantRelationshipGuiDependencyProvider extends AbstractBundleDependency
      */
     public const PLUGINS_MERCHANT_RELATIONSHIP_EDIT_FORM_EXPANDER = 'PLUGINS_MERCHANT_RELATIONSHIP_EDIT_FORM_EXPANDER';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideCommunicationLayerDependencies(Container $container): Container
     {
         $container = parent::provideCommunicationLayerDependencies($container);
@@ -71,11 +66,6 @@ class MerchantRelationshipGuiDependencyProvider extends AbstractBundleDependency
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantRelationshipFacade(Container $container): Container
     {
         $container->set(static::FACADE_MERCHANT_RELATIONSHIP, function (Container $container) {
@@ -85,11 +75,6 @@ class MerchantRelationshipGuiDependencyProvider extends AbstractBundleDependency
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCompanyFacade(Container $container): Container
     {
         $container->set(static::FACADE_COMPANY, function (Container $container) {
@@ -99,11 +84,6 @@ class MerchantRelationshipGuiDependencyProvider extends AbstractBundleDependency
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCompanyBusinessUnitFacade(Container $container): Container
     {
         $container->set(static::FACADE_COMPANY_BUSINESS_UNIT, function (Container $container) {
@@ -113,11 +93,6 @@ class MerchantRelationshipGuiDependencyProvider extends AbstractBundleDependency
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addPropelMerchantRelationshipQuery(Container $container): Container
     {
         $container->set(static::PROPEL_MERCHANT_RELATIONSHIP_QUERY, $container->factory(function () {
@@ -127,11 +102,6 @@ class MerchantRelationshipGuiDependencyProvider extends AbstractBundleDependency
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantFacade(Container $container): Container
     {
         $container->set(static::FACADE_MERCHANT, function (Container $container) {
@@ -141,11 +111,6 @@ class MerchantRelationshipGuiDependencyProvider extends AbstractBundleDependency
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantRelationshipCreateFormExpanderPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_MERCHANT_RELATIONSHIP_CREATE_FORM_EXPANDER, function () {
@@ -155,11 +120,6 @@ class MerchantRelationshipGuiDependencyProvider extends AbstractBundleDependency
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantRelationshipEditFormExpanderPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_MERCHANT_RELATIONSHIP_EDIT_FORM_EXPANDER, function () {

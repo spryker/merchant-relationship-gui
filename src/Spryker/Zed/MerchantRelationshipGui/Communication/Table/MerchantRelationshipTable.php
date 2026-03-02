@@ -34,10 +34,6 @@ class MerchantRelationshipTable extends AbstractTable
      */
     protected $idCompany;
 
-    /**
-     * @param \Orm\Zed\MerchantRelationship\Persistence\SpyMerchantRelationshipQuery $merchantRelationshipQuery
-     * @param int|null $idCompany
-     */
     public function __construct(
         SpyMerchantRelationshipQuery $merchantRelationshipQuery,
         ?int $idCompany = null
@@ -47,11 +43,6 @@ class MerchantRelationshipTable extends AbstractTable
         $this->setTableIdentifier(static::TABLE_IDENTIFIER);
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return \Spryker\Zed\Gui\Communication\Table\TableConfiguration
-     */
     protected function configure(TableConfiguration $config): TableConfiguration
     {
         $url = Url::generate('table', ['id-company' => $this->idCompany]);
@@ -77,11 +68,6 @@ class MerchantRelationshipTable extends AbstractTable
         return $config;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return \Spryker\Zed\Gui\Communication\Table\TableConfiguration
-     */
     protected function setHeader(TableConfiguration $config): TableConfiguration
     {
         $baseData = [
@@ -98,11 +84,6 @@ class MerchantRelationshipTable extends AbstractTable
         return $config;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return array
-     */
     protected function prepareData(TableConfiguration $config): array
     {
         $queryResults = $this->runQuery($this->getQuery(), $config);
@@ -125,11 +106,6 @@ class MerchantRelationshipTable extends AbstractTable
         return $results;
     }
 
-    /**
-     * @param array $item
-     *
-     * @return string
-     */
     protected function buildLinks(array $item): string
     {
         $buttons = [];
@@ -147,9 +123,6 @@ class MerchantRelationshipTable extends AbstractTable
         return implode(' ', $buttons);
     }
 
-    /**
-     * @return \Propel\Runtime\ActiveQuery\ModelCriteria
-     */
     protected function getQuery(): ModelCriteria
     {
         $query = $this->merchantRelationshipQuery
@@ -171,11 +144,6 @@ class MerchantRelationshipTable extends AbstractTable
         return $query;
     }
 
-    /**
-     * @param array $item
-     *
-     * @return string
-     */
     protected function formatMerchantName(array $item): string
     {
         return sprintf(

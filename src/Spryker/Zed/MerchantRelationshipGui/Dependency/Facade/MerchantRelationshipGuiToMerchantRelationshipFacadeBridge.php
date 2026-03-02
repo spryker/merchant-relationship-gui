@@ -53,12 +53,6 @@ class MerchantRelationshipGuiToMerchantRelationshipFacadeBridge implements Merch
         return $this->merchantRelationshipFacade->updateMerchantRelationship($merchantRelationshipTransfer, $merchantRelationshipRequestTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     * @param \Generated\Shared\Transfer\MerchantRelationshipRequestTransfer|null $merchantRelationshipRequestTransfer
-     *
-     * @return void
-     */
     public function deleteMerchantRelationship(
         MerchantRelationshipTransfer $merchantRelationshipTransfer,
         ?MerchantRelationshipRequestTransfer $merchantRelationshipRequestTransfer = null
@@ -66,21 +60,11 @@ class MerchantRelationshipGuiToMerchantRelationshipFacadeBridge implements Merch
         $this->merchantRelationshipFacade->deleteMerchantRelationship($merchantRelationshipTransfer, $merchantRelationshipRequestTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipTransfer
-     */
     public function getMerchantRelationshipById(MerchantRelationshipTransfer $merchantRelationshipTransfer): MerchantRelationshipTransfer
     {
         return $this->merchantRelationshipFacade->getMerchantRelationshipById($merchantRelationshipTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipTransfer|null
-     */
     public function findMerchantRelationshipById(MerchantRelationshipTransfer $merchantRelationshipTransfer): ?MerchantRelationshipTransfer
     {
         return $this->merchantRelationshipFacade->findMerchantRelationshipById($merchantRelationshipTransfer);

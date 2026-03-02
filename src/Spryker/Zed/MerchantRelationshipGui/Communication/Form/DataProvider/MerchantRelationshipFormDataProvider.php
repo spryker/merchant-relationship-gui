@@ -64,12 +64,6 @@ class MerchantRelationshipFormDataProvider
      */
     protected $companyFacade;
 
-    /**
-     * @param \Spryker\Zed\MerchantRelationshipGui\Dependency\Facade\MerchantRelationshipGuiToMerchantRelationshipFacadeInterface $merchantRelationshipFacade
-     * @param \Spryker\Zed\MerchantRelationshipGui\Dependency\Facade\MerchantRelationshipGuiToMerchantFacadeInterface $merchantFacade
-     * @param \Spryker\Zed\MerchantRelationshipGui\Dependency\Facade\MerchantRelationshipGuiToCompanyBusinessUnitFacadeInterface $companyBusinessUnitFacade
-     * @param \Spryker\Zed\MerchantRelationshipGui\Dependency\Facade\MerchantRelationshipGuiToCompanyFacadeInterface $companyFacade
-     */
     public function __construct(
         MerchantRelationshipGuiToMerchantRelationshipFacadeInterface $merchantRelationshipFacade,
         MerchantRelationshipGuiToMerchantFacadeInterface $merchantFacade,
@@ -82,11 +76,6 @@ class MerchantRelationshipFormDataProvider
         $this->companyFacade = $companyFacade;
     }
 
-    /**
-     * @param int|null $idMerchantRelationship
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipTransfer|null
-     */
     public function getData(?int $idMerchantRelationship = null): ?MerchantRelationshipTransfer
     {
         $merchantRelationshipTransfer = new MerchantRelationshipTransfer();

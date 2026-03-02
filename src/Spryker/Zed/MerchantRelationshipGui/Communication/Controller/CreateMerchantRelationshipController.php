@@ -101,11 +101,6 @@ class CreateMerchantRelationshipController extends AbstractController
         return $this->redirectResponse($redirectUrl);
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return int|null
-     */
     protected function getCompanyIdFromRequest(Request $request): ?int
     {
         $formData = $request->get('merchant-relationship', []);

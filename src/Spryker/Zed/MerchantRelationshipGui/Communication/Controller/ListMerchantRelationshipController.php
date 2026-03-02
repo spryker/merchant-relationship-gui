@@ -16,11 +16,6 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class ListMerchantRelationshipController extends AbstractController
 {
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return array
-     */
     public function indexAction(Request $request): array
     {
         $idCompany = $request->get('id-company', null);
@@ -39,11 +34,6 @@ class ListMerchantRelationshipController extends AbstractController
         ]);
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\JsonResponse
-     */
     public function tableAction(Request $request): JsonResponse
     {
         $idCompany = $request->get('id-company', null);

@@ -115,11 +115,6 @@ class EditMerchantRelationshipController extends AbstractController
         return $this->redirectResponse($redirectUrl);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     *
-     * @return int|null
-     */
     protected function getIdCompanyFromTransfer(MerchantRelationshipTransfer $merchantRelationshipTransfer): ?int
     {
         if ($merchantRelationshipTransfer->getOwnerCompanyBusinessUnit()) {

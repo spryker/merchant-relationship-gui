@@ -46,9 +46,6 @@ class MerchantRelationshipGuiCommunicationFactory extends AbstractCommunicationF
         return $this->getFormFactory()->create(MerchantRelationshipEditForm::class, $data, $options);
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationshipGui\Communication\Form\DataProvider\MerchantRelationshipFormDataProvider
-     */
     public function createMerchantRelationshipFormDataProvider(): MerchantRelationshipFormDataProvider
     {
         return new MerchantRelationshipFormDataProvider(
@@ -59,19 +56,11 @@ class MerchantRelationshipGuiCommunicationFactory extends AbstractCommunicationF
         );
     }
 
-    /**
-     * @param int|null $idCompany
-     *
-     * @return \Spryker\Zed\MerchantRelationshipGui\Communication\Table\MerchantRelationshipTable
-     */
     public function createMerchantRelationshipTable(?int $idCompany = null): MerchantRelationshipTable
     {
         return new MerchantRelationshipTable($this->getPropelMerchantRelationshipQuery(), $idCompany);
     }
 
-    /**
-     * @return \Symfony\Component\Form\FormInterface
-     */
     public function createDeleteMerchantRelationshipForm(): FormInterface
     {
         return $this->getFormFactory()->create(DeleteMerchantRelationshipForm::class, [], [
@@ -79,41 +68,26 @@ class MerchantRelationshipGuiCommunicationFactory extends AbstractCommunicationF
         ]);
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationshipGui\Dependency\Facade\MerchantRelationshipGuiToCompanyFacadeInterface
-     */
     public function getCompanyFacade(): MerchantRelationshipGuiToCompanyFacadeInterface
     {
         return $this->getProvidedDependency(MerchantRelationshipGuiDependencyProvider::FACADE_COMPANY);
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationshipGui\Dependency\Facade\MerchantRelationshipGuiToCompanyBusinessUnitFacadeInterface
-     */
     public function getCompanyBusinessUnitFacade(): MerchantRelationshipGuiToCompanyBusinessUnitFacadeInterface
     {
         return $this->getProvidedDependency(MerchantRelationshipGuiDependencyProvider::FACADE_COMPANY_BUSINESS_UNIT);
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationshipGui\Dependency\Facade\MerchantRelationshipGuiToMerchantFacadeInterface
-     */
     public function getMerchantFacade(): MerchantRelationshipGuiToMerchantFacadeInterface
     {
         return $this->getProvidedDependency(MerchantRelationshipGuiDependencyProvider::FACADE_MERCHANT);
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationshipGui\Dependency\Facade\MerchantRelationshipGuiToMerchantRelationshipFacadeInterface
-     */
     public function getMerchantRelationshipFacade(): MerchantRelationshipGuiToMerchantRelationshipFacadeInterface
     {
         return $this->getProvidedDependency(MerchantRelationshipGuiDependencyProvider::FACADE_MERCHANT_RELATIONSHIP);
     }
 
-    /**
-     * @return \Orm\Zed\MerchantRelationship\Persistence\SpyMerchantRelationshipQuery
-     */
     public function getPropelMerchantRelationshipQuery(): SpyMerchantRelationshipQuery
     {
         return $this->getProvidedDependency(MerchantRelationshipGuiDependencyProvider::PROPEL_MERCHANT_RELATIONSHIP_QUERY);

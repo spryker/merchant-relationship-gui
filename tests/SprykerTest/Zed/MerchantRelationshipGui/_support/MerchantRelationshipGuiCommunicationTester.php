@@ -31,11 +31,6 @@ class MerchantRelationshipGuiCommunicationTester extends Actor
 {
     use _generated\MerchantRelationshipGuiCommunicationTesterActions;
 
-    /**
-     * @param string $merchantRelationshipKey
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipTransfer
-     */
     public function createMerchantRelationship(string $merchantRelationshipKey): MerchantRelationshipTransfer
     {
         $merchantTransfer = $this->haveMerchant();

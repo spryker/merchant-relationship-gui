@@ -49,9 +49,6 @@ class MerchantRelationshipTableQueryTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -60,9 +57,6 @@ class MerchantRelationshipTableQueryTest extends Unit
         $this->registerFormFactoryServiceMock();
     }
 
-    /**
-     * @return void
-     */
     public function testFetchDataReturnsCorrectMerchantRelationshipData(): void
     {
         // Arrange
@@ -82,17 +76,11 @@ class MerchantRelationshipTableQueryTest extends Unit
         $this->assertContains((string)$merchantRelationshipTransfer2->getIdMerchantRelationship(), $resultMerchantRelationshipIds);
     }
 
-    /**
-     * @return void
-     */
     protected function registerTwigServiceMock(): void
     {
         $this->tester->getContainer()->set(static::SERVICE_TWIG, $this->getTwigMock());
     }
 
-    /**
-     * @return void
-     */
     protected function registerFormFactoryServiceMock(): void
     {
         $this->tester->getContainer()->set(static::SERVICE_FORM_FACTORY, $this->getFormFactoryMock());
@@ -113,9 +101,6 @@ class MerchantRelationshipTableQueryTest extends Unit
         return $twigMock;
     }
 
-    /**
-     * @return \Twig\Loader\LoaderInterface
-     */
     protected function getChainLoader(): LoaderInterface
     {
         return new ChainLoader();

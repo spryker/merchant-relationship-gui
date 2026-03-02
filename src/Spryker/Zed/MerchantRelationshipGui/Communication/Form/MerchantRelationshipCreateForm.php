@@ -106,19 +106,11 @@ class MerchantRelationshipCreateForm extends AbstractType
      */
     protected const ASSIGNED_COMPANY_BUSINESS_UNIT_FIELD_PLACEHOLDER = 'Select Business Units';
 
-    /**
-     * @return string
-     */
     public function getBlockPrefix(): string
     {
         return 'merchant-relationship';
     }
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setRequired(static::OPTION_COMPANY_CHOICES);
@@ -252,11 +244,6 @@ class MerchantRelationshipCreateForm extends AbstractType
         return $this;
     }
 
-    /**
-     * @param \Symfony\Component\Form\FormBuilderInterface $builder
-     *
-     * @return void
-     */
     protected function addModelTransformer(FormBuilderInterface $builder): void
     {
         $builder->get(static::FIELD_ASSIGNED_COMPANY_BUSINESS_UNIT)->addModelTransformer(
@@ -267,9 +254,6 @@ class MerchantRelationshipCreateForm extends AbstractType
         );
     }
 
-    /**
-     * @return callable
-     */
     protected function getAssignedBusinessUnitTransformer(): callable
     {
         return function ($businessUnitCollection): array {
@@ -289,9 +273,6 @@ class MerchantRelationshipCreateForm extends AbstractType
         };
     }
 
-    /**
-     * @return callable
-     */
     private function getAssignedBusinessUnitReverseTransformer(): callable
     {
         return function ($data): CompanyBusinessUnitCollectionTransfer {

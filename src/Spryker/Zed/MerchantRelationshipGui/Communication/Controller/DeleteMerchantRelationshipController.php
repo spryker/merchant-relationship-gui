@@ -60,11 +60,6 @@ class DeleteMerchantRelationshipController extends AbstractController
      */
     protected const MESSAGE_MERCHANT_RELATIONSHIP_DELETE_SUCCESS = 'Merchant relation deleted successfully.';
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     public function indexAction(Request $request): RedirectResponse
     {
         $idMerchantRelationship = $this->castId($request->get(static::REQUEST_PARAMETER_ID_MERCHANT_RELATIONSHIP));
